@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int binarySearch(int arr[], int size, int target) {
+    int left = 0, right = size - 1;
+
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
+
+        if (arr[mid] == target) {
+            return mid; // Target found
+        } else if (arr[mid] < target) {
+            left = mid + 1; // Adjust the left pointer
+        } else {
+            right = mid - 1; // Adjust the right pointer
+        }
+    }
+
+    return -1; // Target not found
+}
+
+int main() {
+    int nums[] = {45, 4, 23, -11, 20, 5, 10, 50};
+    int size = sizeof(nums) / sizeof(nums[0]);
+    int target = 5;
+
+    int result = binarySearch(nums, size, target);
+
+    if (result != -1) {
+        printf("Found in the position %d\n", result);
+    } else {
+        printf("Not found\n");
+    }
+
+    return 0;
+}
