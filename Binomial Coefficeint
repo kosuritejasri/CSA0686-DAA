@@ -18,7 +18,11 @@ int binomialCoefficient(int n, int k) {
 }
 
 int main() {
-    int n = 8, k = 8;
+    int n, k;
+    printf("Enter the value of n: ");
+    scanf("%d",&n);
+    printf("Enter the value of k: " );
+    scanf("%d",&k);
     int result = binomialCoefficient(n, k);
     printf("Binomial coefficient C(%d, %d) = %d\n", n, k, result);
 
